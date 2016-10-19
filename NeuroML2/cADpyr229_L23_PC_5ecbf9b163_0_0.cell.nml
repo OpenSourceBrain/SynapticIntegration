@@ -7062,7 +7062,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <specificCapacitance segmentGroup="apical" value="2 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="axonal" value="1.0 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="somatic" value="1.0 uF_per_cm2"/>
-                <initMembPotential segmentGroup="all" value="-80 mV"/>
+                <initMembPotential segmentGroup="all" value="-73.3 mV"/>
             </membraneProperties>
             <intracellularProperties>
                 <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2__cADpyr_229_axonal" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>

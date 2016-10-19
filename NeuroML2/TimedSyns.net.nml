@@ -15,9 +15,23 @@
     <include href="K_Pst.channel.nml"></include>
     <include href="CaDynamics_E2_NML2.nml"></include>
     <include href="Ca_LVAst.channel.nml"></include>
-    <expTwoSynapse id="synAmpa1" gbase="1nS" erev="0mV" tauDecay="5ms" tauRise="0.5ms"/>
-    <expTwoSynapse id="synGaba1" gbase="2nS" erev="-80mV" tauDecay="20ms" tauRise="1ms"/>
-    <poissonFiringSynapse id="psf1" averageRate="150 Hz" synapse="synAmpa1" spikeTarget="./synAmpa1"/>
+    
+    <expTwoSynapse id="synAmpa1" gbase="2nS" erev="0mV" tauDecay="5ms" tauRise="0.5ms"/>
+    
+    
+    <timedSynapticInput id="syn_soma" synapse="synAmpa1" spikeTarget="./synAmpa1">
+        <spike id="0" time="200 ms"/>
+    </timedSynapticInput>
+    
+    <timedSynapticInput id="syn_prox_basal" synapse="synAmpa1" spikeTarget="./synAmpa1">
+        <spike id="0" time="500 ms"/>
+    </timedSynapticInput>
+    
+    <timedSynapticInput id="syn_dist_basal" synapse="synAmpa1" spikeTarget="./synAmpa1">
+        <spike id="0" time="800 ms"/>
+    </timedSynapticInput>
+    
+    
     <network id="L23" type="networkWithTemperature" temperature="32degC">
 
         <population id="popL23" component="cADpyr229_L23_PC_5ecbf9b163_0_0" size="1" type="populationList">
@@ -26,13 +40,18 @@
             </instance>
         </population>
       
-
-
         
-        <inputList id="Stim0" population="popL23" component="psf1">
-            <input id="0" target="../popL23/0/L23" destination="synapses"/>
-            <input id="1" target="../popL23/0/L23" destination="synapses" segmentId="340" fractionAlong="0.5"/>
-            
+        <inputList id="Stim0" population="popL23" component="syn_soma">
+            <input id="0" target="../popL23/0/L23" destination="synapses" segmentId="0" fractionAlong="0.5"/>
         </inputList>
+        
+        <inputList id="Stim1" population="popL23" component="syn_prox_basal">
+            <input id="0" target="../popL23/0/L23" destination="synapses" segmentId="264" fractionAlong="0.5"/>
+        </inputList>
+        
+        <inputList id="Stim2" population="popL23" component="syn_dist_basal">
+            <input id="0" target="../popL23/0/L23" destination="synapses" segmentId="340" fractionAlong="0.5"/>
+        </inputList>
+        
     </network>
 </neuroml>
