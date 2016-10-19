@@ -10,20 +10,20 @@
     
     <Include href="L23.net.nml"/>
     
-    <Include href="L23/cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
-    <Include href="L23/pas.channel.nml"/>
-    <Include href="L23/Ih.channel.nml"/>
-    <Include href="L23/NaTs2_t.channel.nml"/>
-    <Include href="L23/SKv3_1.channel.nml"/>
-    <Include href="L23/Im.channel.nml"/>
-    <Include href="L23/NaTa_t.channel.nml"/>
-    <Include href="L23/K_Tst.channel.nml"/>
-    <Include href="L23/Nap_Et2.channel.nml"/>
-    <Include href="L23/SK_E2.channel.nml"/>
-    <Include href="L23/Ca_HVA.channel.nml"/>
-    <Include href="L23/K_Pst.channel.nml"/>
-    <Include href="L23/CaDynamics_E2_NML2.nml"/>
-    <Include href="L23/Ca_LVAst.channel.nml"/>
+    <Include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
+    <Include href="pas.channel.nml"/>
+    <Include href="Ih.channel.nml"/>
+    <Include href="NaTs2_t.channel.nml"/>
+    <Include href="SKv3_1.channel.nml"/>
+    <Include href="Im.channel.nml"/>
+    <Include href="NaTa_t.channel.nml"/>
+    <Include href="K_Tst.channel.nml"/>
+    <Include href="Nap_Et2.channel.nml"/>
+    <Include href="SK_E2.channel.nml"/>
+    <Include href="Ca_HVA.channel.nml"/>
+    <Include href="K_Pst.channel.nml"/>
+    <Include href="CaDynamics_E2_NML2.nml"/>
+    <Include href="Ca_LVAst.channel.nml"/>
    
     <Simulation id="Sim_L23" length="500ms" step="0.005ms" target="L23" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
         
