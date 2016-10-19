@@ -31,6 +31,7 @@
         
         <inputList id="Stim0" population="popExc" component="psf1">
             <input id="0" target="../popL23/0/L23" destination="synapses"/>
+            <input id="1" target="../popL23/0/L23" destination="synapses" segmentId="340" fractionAlong="0.5"/>
             
         </inputList>
     </network>

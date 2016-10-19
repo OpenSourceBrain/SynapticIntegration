@@ -27,8 +27,12 @@
    
     <Simulation id="Sim_L23" length="500ms" step="0.005ms" target="L23" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
         
-        <Display id="soma" title="Membrane potential of soma" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
-            <Line id="soma: v" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/0/v" scale="1mV" color="#6aa799" timeScale="1ms"/>
+        <Display id="soma" title="Membrane potentials" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
+            <Line id="soma" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/0/v" scale="1mV" color="#6aa799" timeScale="1ms"/>
+            <Line id="dend21 (basal-prox)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/264/v" scale="1mV" color="#aaff00" timeScale="1ms"/>
+            <Line id="dend27 (basal-dist)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/340/v" scale="1mV" color="#aa5555" timeScale="1ms"/>
+            <Line id="apic15 (apical-prox)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/955/v" scale="1mV" color="#aa5fff" timeScale="1ms"/>
+            <Line id="apic17 (apical-dist)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/1035/v" scale="1mV" color="#a11fff" timeScale="1ms"/>
         </Display>
         <!--
         <Display id="DispPop__popHH" title="Membrane potentials of cells in popHH" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
