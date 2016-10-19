@@ -1,0 +1,37 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="L23">
+
+    <property tag="Python random seed" value="1234"/>
+    <include href="L23/cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"></include>
+    <include href="L23/pas.channel.nml"></include>
+    <include href="L23/Ih.channel.nml"></include>
+    <include href="L23/NaTs2_t.channel.nml"></include>
+    <include href="L23/SKv3_1.channel.nml"></include>
+    <include href="L23/Im.channel.nml"></include>
+    <include href="L23/NaTa_t.channel.nml"></include>
+    <include href="L23/K_Tst.channel.nml"></include>
+    <include href="L23/Nap_Et2.channel.nml"></include>
+    <include href="L23/SK_E2.channel.nml"></include>
+    <include href="L23/Ca_HVA.channel.nml"></include>
+    <include href="L23/K_Pst.channel.nml"></include>
+    <include href="L23/CaDynamics_E2_NML2.nml"></include>
+    <include href="L23/Ca_LVAst.channel.nml"></include>
+    <expTwoSynapse id="synAmpa1" gbase="1nS" erev="0mV" tauDecay="5ms" tauRise="0.5ms"/>
+    <expTwoSynapse id="synGaba1" gbase="2nS" erev="-80mV" tauDecay="20ms" tauRise="1ms"/>
+    <poissonFiringSynapse id="psf1" averageRate="150 Hz" synapse="synAmpa1" spikeTarget="./synAmpa1"/>
+    <network id="L23" type="networkWithTemperature" temperature="32degC">
+
+        <population id="popL23" component="cADpyr229_L23_PC_5ecbf9b163_0_0" size="1" type="populationList">
+            <instance id="0">
+                <location x="0." y="0." z="200."/>
+            </instance>
+        </population>
+      
+
+
+        
+        <inputList id="Stim0" population="popExc" component="psf1">
+            <input id="0" target="../popL23/0/L23" destination="synapses"/>
+            
+        </inputList>
+    </network>
+</neuroml>
