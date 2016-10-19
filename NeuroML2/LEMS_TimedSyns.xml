@@ -11,6 +11,7 @@
     <Include href="TimedSyns.net.nml"/>
     
     <Include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
+    <Include href="PassiveCell.cell.nml"/>
     <Include href="pas.channel.nml"/>
     <Include href="Ih.channel.nml"/>
     <Include href="NaTs2_t.channel.nml"/>
@@ -34,6 +35,14 @@
             <Line id="apic15 (apical-prox)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/955/v" scale="1mV" color="#aa5fff" timeScale="1ms"/>
             <Line id="apic17 (apical-dist)" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/1035/v" scale="1mV" color="#a11fff" timeScale="1ms"/>
         </Display>
+        
+        
+        <Display id="Pass" title="Membrane potentials of passive cells" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
+            <Line id="0" quantity="popPassive/0/PassiveCell/v" scale="1mV" color="#029a72" timeScale="1ms"/>
+            <Line id="1" quantity="popPassive/1/PassiveCell/v" scale="1mV" color="#22ee22" timeScale="1ms"/>
+            <Line id="2" quantity="popPassive/2/PassiveCell/v" scale="1mV" color="#77ff77" timeScale="1ms"/>
+        </Display>
+        
         <!--
         <Display id="DispPop__popHH" title="Membrane potentials of cells in popHH" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
             <Line id="popHH[0]: v" quantity="popHH/0/pyr_4_sym_soma/v" scale="1mV" color="#029a72" timeScale="1ms"/>
