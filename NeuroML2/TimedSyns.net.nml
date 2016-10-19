@@ -70,7 +70,7 @@
         <projection id="proj0" presynapticPopulation="popPassive" postsynapticPopulation="popL23" synapse="synAmpa1">
             <connection id="0" preCellId="../popPassive/0/PassiveCell" postCellId="../popL23/0/L23" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5"/>
             <connection id="1" preCellId="../popPassive/1/PassiveCell" postCellId="../popL23/0/L23" preSegmentId="0" preFractionAlong="0.5" postSegmentId="264" postFractionAlong="0.5"/>
-             <connection id="0" preCellId="../popPassive/2/PassiveCell" postCellId="../popL23/0/L23" preSegmentId="0" preFractionAlong="0.5" postSegmentId="340" postFractionAlong="0.5"/>
+            <connection id="2" preCellId="../popPassive/2/PassiveCell" postCellId="../popL23/0/L23" preSegmentId="0" preFractionAlong="0.5" postSegmentId="340" postFractionAlong="0.5"/>
           </projection>
         
         <!--
