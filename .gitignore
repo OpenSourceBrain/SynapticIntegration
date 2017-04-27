@@ -4,3 +4,9 @@
 /NeuroML2/x86_64
 /NeuroML2/*.svg
 /NeuroML2/*.dat
+/Tutorial/*.mod
+/Tutorial/*_nrn.py
+/Tutorial/*.hoc
+/Tutorial/*.dat
+/Tutorial/x86_64
+/Tutorial/simulator.props
