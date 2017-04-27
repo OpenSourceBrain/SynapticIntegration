@@ -47,15 +47,17 @@
         <Display id="DispPop__popHH" title="Membrane potentials of cells in popHH" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-90" ymax="50">
             <Line id="popHH[0]: v" quantity="popHH/0/pyr_4_sym_soma/v" scale="1mV" color="#029a72" timeScale="1ms"/>
         </Display>
-        
-        <OutputFile id="Volts_file__popIzh" fileName="Sim_IClamps.popIzh.v.dat">
-            <OutputColumn id="v_popIzh_0_RS_v" quantity="popIzh/0/RS/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="Volts_file__popHH" fileName="Sim_IClamps.popHH.v.dat">
-            <OutputColumn id="v_popHH_0_pyr_4_sym_soma_v" quantity="popHH/0/pyr_4_sym_soma/v"/> 
-        </OutputFile>
         -->
+        
+        <OutputFile id="Volts_file" fileName="v.dat">
+            <OutputColumn id="0" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/0/v"/> 
+            <OutputColumn id="1" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/264/v"/> 
+            <OutputColumn id="2" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/340/v"/> 
+            <OutputColumn id="3" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/955/v"/> 
+            <OutputColumn id="4" quantity="popL23/0/cADpyr229_L23_PC_5ecbf9b163_0_0/1035/v"/> 
+        </OutputFile>
+        
+        
     </Simulation>
 
 
