@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="network_MainenEtAl_PyramidalCell">
+
+    <notes>
+
+Network for Tutorial2a
+
+    </notes>
+
+
+    <include href="K_ChannelML.channel.nml"/>
+    <include href="LeakCond.channel.nml"/>
+    <include href="MainenPassive.cell.nml"/>
+    <include href="Na_ChannelML.channel.nml"/>
+    
+    
+    <expOneSynapse id="syn1" gbase="1nS" erev="0mV" tauDecay="2ms"/>
+    
+    <expOneSynapse id="syn2" gbase="1nS" erev="0mV" tauDecay="2ms"/>
+    
+    
+    <timedSynapticInput id="excSyn1" synapse="syn1" spikeTarget="./syn1">
+        <spike id="0" time="2 ms"/>
+    </timedSynapticInput>
+    
+    <timedSynapticInput id="excSyn2" synapse="syn2" spikeTarget="./syn2">
+        <spike id="0" time="22 ms"/>
+    </timedSynapticInput>
+    
+    <network id="network_MainenEtAl_PyramidalCell" type="networkWithTemperature" temperature="23.0 degC">
+
+        
+
+        <population id="NeuroMLBased" component="MainenPassive" type="populationList" size="1">
+           <annotation>
+                <property tag="color" value="0.1640625 0.66796875 0.9375"/>
+            </annotation>
+            <instance id="0">
+                <location x="0.0" y="0.0" z="0.0"/>
+            </instance>
+        </population>
+
+            <!--There are no synaptic connections present in the network-->
+
+
+        <inputList id="Input_1" component="excSyn1" population="NeuroMLBased">
+            <input id="0" target="../NeuroMLBased/0/MainenPassive" destination="synapses" segmentId="188"/>
+        </inputList>
+        
+        <inputList id="Input_2" component="excSyn2" population="NeuroMLBased">
+            <input id="0" target="../NeuroMLBased/0/MainenPassive" destination="synapses" segmentId="288"/>
+        </inputList>
+
+
+    </network>
+
+</neuroml>
