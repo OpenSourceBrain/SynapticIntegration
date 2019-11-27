@@ -22,3 +22,14 @@ report*.txt
 /NeuroML2/LEMS_Sim_IClamp_cADpyr229_L23_PC_5ecbf9b163_0_0.xml
 /NeuroML2/LEMS_Sim_IClamp_pyr_4_sym.xml
 /NeuroML2/Sim_IClamp_pyr_4_sym.json
+/NeuroML2/IClamp_cADpyr229_L23_PC_5ecbf9b163_0_0.json
+/NeuroML2/LEMS_Sim_Poisson_cADpyr229_L23_PC_5ecbf9b163_0_0.xml
+/NeuroML2/LEMS_Sim_Poisson_pyr_4_sym.xml
+/NeuroML2/Poisson_cADpyr229_L23_PC_5ecbf9b163_0_0.json
+/NeuroML2/Poisson_cADpyr229_L23_PC_5ecbf9b163_0_0.net.nml
+/NeuroML2/Poisson_pyr_4_sym.json
+/NeuroML2/Poisson_pyr_4_sym.net.nml
+/NeuroML2/Sim_IClamp_PassiveCell.json
+/NeuroML2/Sim_IClamp_cADpyr229_L23_PC_5ecbf9b163_0_0.json
+/NeuroML2/Sim_Poisson_cADpyr229_L23_PC_5ecbf9b163_0_0.json
+/NeuroML2/Sim_Poisson_pyr_4_sym.json

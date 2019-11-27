@@ -1,6 +1,7 @@
 from neuromllite import *
 from neuromllite.NetworkGenerator import *
 from neuromllite.utils import create_new_model
+from pyneuroml.pynml import read_neuroml2_file
 import sys
 
 sys.path.append("..")
@@ -12,10 +13,13 @@ def generate(cell, duration, config='IClamp'):
     reference = "%s_%s"%(config, cell)
 
     cell_id = '%s'%cell
-    cell_nmll = Cell(id=cell_id, neuroml2_source_file='%s.cell.nml'%(cell))
+    nml2_filename = '%s.cell.nml'%(cell)
+    cell_nmll = Cell(id=cell_id, neuroml2_source_file=nml2_filename)
  
     ################################################################################
     ###   Add some inputs
+    
+    syn_exc = None
     
     if 'IClamp' in config:
         parameters = {}
@@ -27,8 +31,9 @@ def generate(cell, duration, config='IClamp'):
                                    parameters={'amplitude':'stim_amp', 'delay':'stim_delay', 'duration':'stim_dur'})
       
         
-    else:
-
+    elif 'Poisson' in config:
+        syn_exc = Synapse(id='ampa', 
+                              neuroml2_source_file='ampa.synapse.nml')
         parameters = {}
         parameters['average_rate'] = '100 Hz'
         parameters['number_per_cell'] = '10'
@@ -47,8 +52,21 @@ def generate(cell, duration, config='IClamp'):
                      cell_for_default_population=cell_nmll,
                      color_for_default_population=colors[cell],
                      input_for_default_population=input_source)
+              
+    if 'Poisson' in config:
+        net.synapses.append(syn_exc)
+        net.inputs[0].number_per_cell = 'number_per_cell'
+
                    
-    sim.recordVariables={'2/v':{'all':'*'}}
+    cell = read_neuroml2_file(nml2_filename).cells[0]
+    
+    if len(cell.morphology.segments)>1:
+        sim.recordVariables={}
+        for seg in cell.morphology.segments:
+            seg_id = seg.id
+            if seg_id!=0 and seg_id%500<10:
+                sim.recordVariables['%i/v'%seg_id]={'all':'*'}
+        
     '''
     sim.recordVariables={'biophys/membraneProperties/Na_all/Na/m/q':{'all':'*'},
                          'biophys/membraneProperties/Na_all/Na/h/q':{'all':'*'},
@@ -65,6 +83,7 @@ def generate(cell, duration, config='IClamp'):
         sim.recordVariables['biophys/membraneProperties/IT_all/IT/s/q']={'all':'*'}
         sim.recordVariables['biophys/membraneProperties/IT_all/IT/u/q']={'all':'*'}'''
         
+    net.to_json_file()
     sim.to_json_file()
 
     return sim, net
@@ -77,16 +96,14 @@ if __name__ == "__main__":
         for cell in colors:
             generate('PassiveCell', 700, config="IClamp")
             generate('pyr_4_sym', 700, config="IClamp")
+            generate('pyr_4_sym', 700, config="Poisson")
             generate('cADpyr229_L23_PC_5ecbf9b163_0_0', 700, config="IClamp")
+            generate('cADpyr229_L23_PC_5ecbf9b163_0_0', 700, config="Poisson")
             
         
     else:
-        #generate('IFcurve_PV')
-        #generate('olm')
-        sim, net = generate('pyr_4_sym', 700, config="IClamp")
-        #generate('olm', 1000, config="PoissonFiringSynapse")
-        #generate('bistratified')
-        #generate('IClamp_Pyr')
+        #sim, net = generate('pyr_4_sym', 700, config="IClamp")
+        sim, net = generate('pyr_4_sym', 700, config="Poisson")
         
         check_to_generate_or_run(sys.argv, sim)
     
