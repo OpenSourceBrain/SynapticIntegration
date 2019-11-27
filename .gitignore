@@ -10,3 +10,15 @@
 /Tutorial/*.dat
 /Tutorial/x86_64
 /Tutorial/simulator.props
+*.gv*
+/NeuroML2/IClamp_PassiveCell.json
+/NeuroML2/IClamp_PassiveCell.net.nml
+report.Sim_IClamp_PassiveCell.txt
+report*.txt
+/NeuroML2/IClamp_cADpyr229_L23_PC_5ecbf9b163_0_0.net.nml
+/NeuroML2/IClamp_pyr_4_sym.json
+/NeuroML2/IClamp_pyr_4_sym.net.nml
+/NeuroML2/LEMS_Sim_IClamp_PassiveCell.xml
+/NeuroML2/LEMS_Sim_IClamp_cADpyr229_L23_PC_5ecbf9b163_0_0.xml
+/NeuroML2/LEMS_Sim_IClamp_pyr_4_sym.xml
+/NeuroML2/Sim_IClamp_pyr_4_sym.json
