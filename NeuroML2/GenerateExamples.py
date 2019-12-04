@@ -45,7 +45,7 @@ def generate(cell, duration, config='IClamp'):
                                                
     sim, net = create_new_model(reference,
                      duration, 
-                     dt=0.01, # ms 
+                     dt=0.025, # ms 
                      temperature=34, # degC
                      default_region='Cortex',
                      parameters = parameters,
