@@ -1,5 +1,5 @@
 # Synaptic Integration Demo
 
-**Work in progress!**
+[![Continuous build using OMV](https://github.com/OpenSourceBrain/SynapticIntegration/actions/workflows/omv-ci.yml/badge.svg)](https://github.com/OpenSourceBrain/SynapticIntegration/actions/workflows/omv-ci.yml)
 
-[![Build Status](https://travis-ci.org/OpenSourceBrain/SynapticIntegration.svg?branch=master)](https://travis-ci.org/OpenSourceBrain/SynapticIntegration)
+**Work in progress!**
